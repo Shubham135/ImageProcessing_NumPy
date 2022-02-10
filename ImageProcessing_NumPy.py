@@ -35,6 +35,12 @@ class Edges():
         return output[:,:,(1,2,3)]
 
 
+class Grayscale():
+    def apply(pixels: np.ndarray) -> np.ndarray:
+        result = (pixels[:,:,0] + pixels[:,:,1] + pixels[:,:,2])/3
+        return result
+
+
 class De_noise():
     def apply(pixels: np.ndarray) -> np.ndarray:
         output=np.pad(pixels,pad_width=1)
