@@ -41,6 +41,10 @@ class Grayscale():
         return result
 
 
+
+
+
+
 class De_noise():
     def apply(pixels: np.ndarray) -> np.ndarray:
         output=np.pad(pixels,pad_width=1)
@@ -105,6 +109,13 @@ class Dilate():
             output[:,:,i+1]=image
         # returning only channel 1,2,3 since due to padding the extra channels were added
         return output[:,:,(1,2,3)] 
+
+
+
+class Invert():
+    def apply(pixels: np.ndarray) -> np.ndarray:
+        return 255 - pixels
+
 
 #convert the image into pixels
 image=np.asarray(im, dtype=np.int16)
