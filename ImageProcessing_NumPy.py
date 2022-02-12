@@ -70,6 +70,16 @@ class De_noise():
             # returning only channel 1,2,3 since due to padding the extra channels were added
         return output[:,:,(1,2,3)]
 
+
+
+class NoRed():
+    def apply(pixels: np.ndarray) -> np.ndarray:
+        pixels[:,:,0]=0
+        return pixels
+
+
+
+
 # Normalize the image using the formula pixel -lowest(pixel)/highest(pixcel)-lowest(pixcel)
 class Normalize():
     def apply(pixel: np.ndarray) -> np.ndarray:
