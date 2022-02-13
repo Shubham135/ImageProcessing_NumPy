@@ -78,6 +78,12 @@ class NoRed():
         return pixels
 
 
+#No green filter
+class NoRed():
+    def apply(pixels: np.ndarray) -> np.ndarray:
+        pixels[:,:,1]=0
+        return pixels
+
 
 
 # Normalize the image using the formula pixel -lowest(pixel)/highest(pixcel)-lowest(pixcel)
