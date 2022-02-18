@@ -126,7 +126,11 @@ class Dilate():
         # returning only channel 1,2,3 since due to padding the extra channels were added
         return output[:,:,(1,2,3)] 
 
-
+# Red only
+class NoRed():
+    def apply(pixels: np.ndarray) -> np.ndarray:
+        pixels[:,:,(1,2)]=0
+        return pixels
 
 class Invert():
     def apply(pixels: np.ndarray) -> np.ndarray:
